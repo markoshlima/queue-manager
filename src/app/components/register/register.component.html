@@ -1,0 +1,37 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/login">Login</a></li>
+        <li class="breadcrumb-item">Cadastrar</li>
+    </ol>
+</nav>
+
+<div class="card box-main">
+    <div class="card-body">
+
+        <div class="alert alert-danger" role="alert" *ngIf="error">{{error}}</div>
+
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" *ngIf="!confirm">
+            <div class="form-group">
+                <label for="iname">Nome</label>
+                <input type="text" class="form-control" id="iname" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label for="iemail">Email</label>
+                <input type="text" class="form-control" id="iemail" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="ipassword">Senha</label>
+                <input type="password" class="form-control" id="ipassword" formControlName="password">
+                <small>Mínimo 8 caracteres, deve conter letras e números</small>
+            </div>
+            <div class="form-group">
+                <label for="ipassword2">Confirme a senha</label>
+                <input type="password" class="form-control" id="ipassword2" formControlName="password2">
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+
+        <div class="alert alert-success" role="alert" *ngIf="confirm">{{confirmMessage}}</div>
+
+    </div>
+</div>
