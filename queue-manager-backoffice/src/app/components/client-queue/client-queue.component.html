@@ -1,0 +1,47 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/list-queue">Filas</a></li>
+        <li class="breadcrumb-item">{{queue.name}}</li>
+    </ol>
+</nav>
+
+<div class="card box-main-list">
+    <div class="card-body">
+
+        <div class="btn-group" role="group" style="margin-bottom:10px">
+            <button type="button" class="btn btn-primary" routerLink="/form-client-queue/{{idQueue}}">Novo</button>
+            <button type="button" class="btn btn-danger" (click)="remove()">Andar fila</button>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h2>{{queue.name}}</h2>
+                {{queue.text_queue}}
+            </div>
+        </div>
+
+        <div *ngIf="clients?.length > 0">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Posição</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let client of clients">
+                        <td>{{client.pos}}º</td>
+                        <td>{{client.name}}</td>
+                        <td><a href="/qrcode/{{client.id_client}}" target="_blank" >qrcode</a></td>
+                        <td><button type="button" class="btn btn-dark" (click)="goTo(client.id_client)">Ver</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="clients?.length == 0">
+            A fila está vazia.
+        </div>
+    </div>
+</div>
