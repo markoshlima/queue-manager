@@ -1,0 +1,15 @@
+<div class="card box-main">
+    <div class="card-body">
+        <div class="alert alert-success" role="alert" *ngIf="!error">
+            Sua conta foi validada com sucesso! Clique em realizar login para entrar na sua conta!<br /><br />
+            <button class="btn btn-primary" routerLink="/login">Realizar Login</button>
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="error">
+            URL inválida, motivos:<br />
+            1 - Link tem mais que 24 horas. <br />
+            2 - Usuário já foi validado. <br />
+            3 - Link não condiz com que foi enviado por e-mail. <br />
+        </div>
+    </div>
+</div>
