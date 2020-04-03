@@ -50,3 +50,8 @@ All events is using SQS queue for desangage systems, but if an event can't be re
 
 App Functions:
 CloudWatch Logs capture all logs from Lambda Functions. All these functions is subscribed to ElasticSearch, that send these logs through an other Lambda Function. Kibana is avalaible for data visualization, user can troubleshooting through this tool.
+
+**Pricing**
+
+All resources were priced in AWS Calculator, the following link, there is the final price of this architecture, excluding Lambda, SQS, S3 and Cloudfront services, because it is Free Tier Elegible or the value is low to input in this pricing.
+[Pricing Project](https://calculator.aws/#/estimate?id=f70d36f06b2fdf3ca7f7ec01bea62f5dcb0f3e9c)
