@@ -1,5 +1,7 @@
 **Architecture Infraestructure**
+
 ![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Architecture%20Infraestructure/Architecture%20Infraestructure.png?raw=true)
+
 All resources is inside a VPC in sa-east-1 (São Paulo) region.
 Route Table to route trafic between public and private using a NAT Instance.
 Two private and two public subnet in two distinct availibility zones for high disponibility.
@@ -7,7 +9,9 @@ In privete subnets there are private servers such as storages and functions.
 In public subnets there are public servers such as Jenkins and Bastions Hosts.
 
 **Architecture Application**
-![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Architecture%20Application/Architecture%20Application.png?raw=true)
+
+![](https://github.com/markoshlima/queue-manager/blob/master/docs/Architecture%20Application/Architecture%20Application.png?raw=true)
+
 All requests for the system, is behing a Content Delivery Network (Cloudfront), to serve low latency and security for static and dynamic content.
 
 Apresentation Layer
@@ -26,6 +30,7 @@ RDS (MySQL): It is for store data about queue and client persistent information,
 ElastiCache (Redis): It is using for delivery client and position information, low latency and high throughput is required.
 
 **Loggin and Monitoring**
+
 ![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Logging%20and%20Monitoring/Logging%20and%20Monitoring.png?raw=true)
 Databases:
 For MySQL and Redis databases, all metrics is sending (for default) to CloudWatch Metrics. These metrics above are monitored for CloudWatch Alarms.
