@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >-
+  Remove um determinado cliente da fila (redis) e salva o fim da fila no
+  transacional (mysq)
+Resources:
+  removeclientqueue:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: >-
+        Remove um determinado cliente da fila (redis) e salva o fim da fila no
+        transacional (mysq)
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::297738258633:role/LambdaFunctionsRole'
+      Events:
+        Api1:
+          Type: Api
+          Properties:
+            Path: '/client/{id}'
+            Method: DELETE
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-03ed5bdb6048d0544
+        SubnetIds:
+          - subnet-0448a35c96f4a061f
+          - subnet-0b5901f76345dc1a8
+      Layers:
+        - 'arn:aws:lambda:sa-east-1:297738258633:layer:redis:12'
+        - 'arn:aws:lambda:sa-east-1:297738258633:layer:utils:20'
