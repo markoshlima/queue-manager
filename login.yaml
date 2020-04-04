@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Valida o usuário e senha e gera o token jwt
+Resources:
+  login:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: Valida o usuário e senha e gera o token jwt
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::297738258633:role/LambdaFunctionsRole'
+      Events:
+        Api1:
+          Type: Api
+          Properties:
+            Path: /login
+            Method: POST
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-03ed5bdb6048d0544
+        SubnetIds:
+          - subnet-0448a35c96f4a061f
+          - subnet-0b5901f76345dc1a8
+      Environment:
+        Variables:
+          LOGIN_AUTH_SQS: 'https://sqs.sa-east-1.amazonaws.com/297738258633/log-login-auth'
+          TABLE_NAME_CUSTOMER: customer
+      Layers:
+        - 'arn:aws:lambda:sa-east-1:297738258633:layer:utils:20'
