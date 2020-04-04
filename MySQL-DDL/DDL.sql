@@ -9,14 +9,14 @@ CREATE TABLE queue (
   PRIMARY KEY (id_queue)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `queue_client` (
-  `id_queue_client` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `name` varchar(120) CHARACTER SET utf16 NOT NULL,
-  `email` varchar(120) DEFAULT NULL,
-  `telephone` varchar(50) DEFAULT NULL,
-  `date_in` datetime NOT NULL,
-  `date_out` datetime DEFAULT NULL,
-  `removed` tinyint(1) DEFAULT NULL,
-  `id_queue` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`id_queue_client`)
+CREATE TABLE queue_client (
+  id_queue_client varchar(40) CHARACTER SET utf8 NOT NULL,
+  name varchar(120) CHARACTER SET utf16 NOT NULL,
+  email varchar(120) DEFAULT NULL,
+  telephone varchar(50) DEFAULT NULL,
+  date_in datetime NOT NULL,
+  date_out datetime DEFAULT NULL,
+  removed tinyint(1) DEFAULT NULL,
+  id_queue varchar(40) DEFAULT NULL,
+  PRIMARY KEY (id_queue_client)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
