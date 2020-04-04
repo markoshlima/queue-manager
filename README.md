@@ -1,10 +1,10 @@
-**Introduction**
+# **Introduction**
 
 Queue Manager is a system to manage queues as the name implies, aimed at users who want to perform queue control for bars, restaurants, nightclubs and so on. Below are images of some screens of the system in operation.
 
 ![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/UI/UI.png?raw=true)
 
-**Infraestructure Architecture**
+# **Infraestructure Architecture**
 
 ![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Architecture%20Infraestructure/Architecture%20Infraestructure.png?raw=true)
 
@@ -14,7 +14,7 @@ Two private and two public subnet in two distinct availibility zones for high di
 In private subnets there are private servers such as storages and functions.
 In public subnets there are public servers such as Nat Instance and Bastion Host.
 
-**Application Component Architecture**
+# **Application Component Architecture**
 
 ![](https://github.com/markoshlima/queue-manager/blob/master/docs/Architecture%20Application/Architecture%20Application.png?raw=true)
 
@@ -35,11 +35,11 @@ DynamoDB: For store user information, the structure need to be flexible and elas
 RDS (MySQL): It is for store data about queue and client persistent information, large queries and unions is required.
 ElastiCache (Redis): It is using for delivery client and position information, low latency and high throughput is required.
 
-**Microservice Architecture**
+# **Microservice Architecture**
 
 //TODO
 
-**Logging and Monitoring**
+# **Logging and Monitoring**
 
 ![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Logging%20and%20Monitoring/Logging%20and%20Monitoring.png?raw=true)
 
@@ -63,7 +63,7 @@ All events is using SQS, but if an event can't be released to next microservice,
 App Functions:
 CloudWatch Logs capture all logs from Lambda Functions. All these functions is subscribed to ElasticSearch, that send these logs through an other Lambda Function. Kibana is avalaible for data visualization, user can troubleshooting through this tool.
 
-**Pricing**
+# **Pricing**
 
 All resources were priced in AWS Calculator, the following link, the final price of this architecture, excluding Lambda, SQS, S3 and Cloudfront services, because it is Free Tier Elegible or the value is low to input in this pricing cotation.
 
