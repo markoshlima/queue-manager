@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >-
+  Serviço para realizar o envio de e-mails, recebe o evento(email) da fila e faz
+  o envio
+Resources:
+  emailsender:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs10.x
+      CodeUri: .
+      Description: >-
+        Serviço para realizar o envio de e-mails, recebe o evento(email) da fila
+        e faz o envio
+      MemorySize: 128
+      Timeout: 5
+      Role: 'arn:aws:iam::297738258633:role/LambdaFunctionsRole'
+      Events:
+        SQS1:
+          Type: SQS
+          Properties:
+            Queue:
+              'Fn::GetAtt':
+                - SQSQueue1
+                - Arn
+            BatchSize: 10
+      Environment:
+        Variables:
+          HOST_SMTP: smtp.gmail.com
+          PASS_SMTP: markoshlima
+          USER_SMTP: sistema.fila.aws@gmail.com
+  SQSQueue1:
+    Type: 'AWS::SQS::Queue'
+    Properties: {}
