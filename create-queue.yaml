@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Cadastra uma nova fila
+Resources:
+  createqueue:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: Cadastra uma nova fila
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::297738258633:role/LambdaFunctionsRole'
+      Events:
+        SQS1:
+          Type: SQS
+          Properties:
+            Queue:
+              'Fn::GetAtt':
+                - SQSQueue1
+                - Arn
+            BatchSize: 10
+        Api1:
+          Type: Api
+          Properties:
+            Path: /queue
+            Method: POST
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-03ed5bdb6048d0544
+        SubnetIds:
+          - subnet-0448a35c96f4a061f
+          - subnet-0b5901f76345dc1a8
+      Environment:
+        Variables:
+          MAXIMUM_QTD_NAME: '128'
+          MAXIMUM_QTD_TEXT: '2000'
+      Layers:
+        - 'arn:aws:lambda:sa-east-1:297738258633:layer:utils:20'
+  SQSQueue1:
+    Type: 'AWS::SQS::Queue'
+    Properties: {}
