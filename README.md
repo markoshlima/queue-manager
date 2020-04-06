@@ -37,7 +37,10 @@ ElastiCache (Redis): It is using for delivery client and position information, l
 
 # **Microservice Architecture**
 
-//TODO
+![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Architecture%20Microservice/Architecture%20Microservice.png?raw=true)
+
+Microservice architecture, applications are broken down into smaller, independent and uncoupled components. Applicable model for high scalability and maintenance.
+All microservices are serveless functions.
 
 # **Logging and Monitoring**
 
