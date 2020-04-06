@@ -29,6 +29,7 @@ Application Layer
 All backend application is in Lambda Functions written in Python, except the Mailer function, that is written in NodeJS.
 The user and e-mailing intelligence is event driven architecture, using SQS.
 All Lambda functions are distribuited from two availibility zones for high disponibility.
+All confidential information such as password and database host and encryption key are stored in System Manager Parameter Store for greater security, traceability and maintenance.
 
 Storage Layer
 DynamoDB: For store user information, the structure need to be flexible and elastic. 
