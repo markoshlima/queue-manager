@@ -72,3 +72,15 @@ CloudWatch Logs capture all logs from Lambda Functions. All these functions is s
 All resources were priced in AWS Calculator, the following link, the final price of this architecture, excluding Lambda, SQS, S3 and Cloudfront services, because it is Free Tier Elegible or the value is low to input in this pricing cotation.
 
 [Click here for Pricing Project](https://calculator.aws/#/estimate?id=f70d36f06b2fdf3ca7f7ec01bea62f5dcb0f3e9c)
+
+# Addition Information & Setup
+
+The project is for lab and studies, it is not operating so as not to keep costs in production. That's a reason not existing a Continuos Develivy implemented too.
+
+To setup the environment:
+  - Use folder /Iaac in this repository (Infraestructure as a Code) to publish the MySQL and Redis databases (just change the variables) in AWS CloudFormation.
+  - In DynamoDB create two table: customer and pre-customer.
+  - Create these parameters in AWS SSM Parameter Store:MYSQL_DATABASE, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_USER, REDIS_HOST, TOKEN_KEY.
+  - In Lambda functions there is the SAM Template for creating (CloudFormation) the backend applications as well.
+  - Frontent: Create the buckets and AWS CloudFormation for static delivery.
+  - Create other CloudFront to serve backend endpoints, pointing to API-GATEWAY
