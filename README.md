@@ -41,6 +41,12 @@ ElastiCache (Redis): It is using for delivery client and position information, l
 
 Microservice architecture, applications are broken down into smaller, independent and uncoupled components. Applicable model for high scalability and maintenance. All microservices are serveless functions.
 
+Swaggers:
+  - [API CLIENT](https://github.com/markoshlima/queue-manager/blob/master/api-swagger/client-v1-swagger.yaml) 
+  - [API LOGIN](https://github.com/markoshlima/queue-manager/blob/master/api-swagger/login-v1-swagger.yaml)
+  - [API QUEUE](https://github.com/markoshlima/queue-manager/blob/master/api-swagger/queue-v1-swagger.yaml)
+  - [API CUSTOMER](https://github.com/markoshlima/queue-manager/blob/master/api-swagger/customer-v1-swagger.yaml)
+
 # **Logging and Monitoring**
 
 ![alt text](https://github.com/markoshlima/queue-manager/blob/master/docs/Logging%20and%20Monitoring/Logging%20and%20Monitoring.png?raw=true)
