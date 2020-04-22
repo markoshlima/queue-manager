@@ -28,7 +28,7 @@ Resources:
       Environment:
         Variables:
           HOST_SMTP: smtp.gmail.com
-          PASS_SMTP: markoshlima
+          PASS_SMTP: 
           USER_SMTP: sistema.fila.aws@gmail.com
   SQSQueue1:
     Type: 'AWS::SQS::Queue'
