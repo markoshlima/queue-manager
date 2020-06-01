@@ -1,15 +1,24 @@
 {
-  "Type" : "AWS::ElastiCache::CacheCluster",
-  "Properties" : {
-      "AZMode" : "single-az",
-      "AutoMinorVersionUpgrade" : false,
-      "CacheNodeType" : "cache.t2.micro",
-      "CacheSubnetGroupName" : "subnet-group-ec-redis-private",
-      "ClusterName" : "dbproject-redis",
-      "Engine" : "redis",
-      "EngineVersion" : "5.0.6",
-      "NumCacheNodes" : 1,
-      "Port" : 6379,
-      "VpcSecurityGroupIds" : ["sg-09522a6eef7176848"]
-    }
+	"AWSTemplateFormatVersion" : "2010-09-09",
+
+	"Description" : "Create Cache Redis Cluster",
+
+	"Resources" : {
+	
+		"CacheCluster" : {
+		  "Type" : "AWS::ElastiCache::CacheCluster",
+		  "Properties" : {
+			  "AZMode" : "single-az",
+			  "AutoMinorVersionUpgrade" : false,
+			  "CacheNodeType" : "cache.t2.micro",
+			  "CacheSubnetGroupName" : "subnet-group-ec-redis-private",
+			  "ClusterName" : "dbproject-redis",
+			  "Engine" : "redis",
+			  "EngineVersion" : "5.0.6",
+			  "NumCacheNodes" : 1,
+			  "Port" : 6379,
+			  "VpcSecurityGroupIds" : ["sg-09522a6eef7176848"]
+			}
+		}
+	}
 }

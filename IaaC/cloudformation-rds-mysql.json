@@ -1,25 +1,34 @@
 {
-  "Type" : "AWS::RDS::DBInstance",
-  "Properties" : {
-      "AllocatedStorage" : "10",
-      "BackupRetentionPeriod" : 0,
-      "DBInstanceClass" : "db.t2.micro",
-	  "DBInstanceIdentifier":"db-project",
-	  "DBName":"dbproject",
-      "DBParameterGroupName" : "default.mysql5.7",
-	  "DBSubnetGroupName" : "subnet-group-rds-mysql-private",
-      "DeletionProtection" : false,
-      "EnablePerformanceInsights" : false,
-      "Engine" : "mysql",
-      "EngineVersion" : "5.7.26",
-	  "MasterUsername":"admin",
-	  "MasterUserPassword":"(SET PASSWORD HERE)",
-      "MultiAZ" : false,
-      "OptionGroupName" : "default:mysql-5-7",
-      "Port" : "3306",
-      "PubliclyAccessible" : false,
-      "StorageEncrypted" : false,
-      "StorageType" : "standard",
-      "VPCSecurityGroups" : ["sg-0113bd7c3d1fddb2c"]
-    }
+	"AWSTemplateFormatVersion" : "2010-09-09",
+
+	"Description" : "Create DBInstance of Mysql",
+
+	"Resources" : {
+	
+		"MySQLDB" :{
+		  "Type" : "AWS::RDS::DBInstance",
+		  "Properties" : {
+			  "AllocatedStorage" : "10",
+			  "BackupRetentionPeriod" : 0,
+			  "DBInstanceClass" : "db.t2.micro",
+			  "DBInstanceIdentifier":"db-project",
+			  "DBName":"dbproject",
+			  "DBParameterGroupName" : "default.mysql5.7",
+			  "DBSubnetGroupName" : "subnet-group-rds-mysql-private",
+			  "DeletionProtection" : false,
+			  "EnablePerformanceInsights" : false,
+			  "Engine" : "mysql",
+			  "EngineVersion" : "5.7.26",
+			  "MasterUsername":"admin",
+			  "MasterUserPassword":"{SET PASSWORD}",
+			  "MultiAZ" : false,
+			  "OptionGroupName" : "default:mysql-5-7",
+			  "Port" : "3306",
+			  "PubliclyAccessible" : false,
+			  "StorageEncrypted" : false,
+			  "StorageType" : "standard",
+			  "VPCSecurityGroups" : ["sg-0113bd7c3d1fddb2c"]
+			}
+		}
+	}
 }

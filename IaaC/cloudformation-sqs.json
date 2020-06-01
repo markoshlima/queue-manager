@@ -1,0 +1,41 @@
+{
+	"AWSTemplateFormatVersion" : "2010-09-09",
+
+	"Description" : "Create SQS queues and DLQ queues",
+
+	"Resources" : {
+
+		"CreatePreCustomerDlq" : {
+		  "Type" : "AWS::SQS::Queue",
+		  "Properties" : {
+			  "QueueName" : "create-pre-customer-dlq"
+			}
+		},
+		"CreatePreCustomer" : {
+		  "Type" : "AWS::SQS::Queue",
+		  "Properties" : {
+			  "QueueName" : "create-pre-customer",
+			  "RedrivePolicy": { 
+					"deadLetterTargetArn" : {"Fn::GetAtt" : ["CreatePreCustomerDlq", "Arn"]}, 
+					"maxReceiveCount" : 3 
+				}
+			}
+		},
+		"EmailSenderDlq" : {
+		  "Type" : "AWS::SQS::Queue",
+		  "Properties" : {
+			  "QueueName" : "email-sender-dlq"
+			}
+		},
+		"EmailSender" : {
+		  "Type" : "AWS::SQS::Queue",
+		  "Properties" : {
+			  "QueueName" : "email-sender",
+			  "RedrivePolicy": { 
+					"deadLetterTargetArn" : {"Fn::GetAtt" : ["EmailSenderDlq", "Arn"]}, 
+					"maxReceiveCount" : 3 
+				}
+			}
+		}
+	}
+}
