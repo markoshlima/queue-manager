@@ -75,7 +75,7 @@ All resources were priced in AWS Calculator, the following link, the final price
 The project is for lab and studies, it is not operating so as not to keep costs in production. That's a reason not existing a Continuos Develivy implemented too.
 
 To setup the environment:
-  - Use folder /Iaac in this repository (Infraestructure as a Code) to publish the MySQL and Redis databases (just change the variables), and also SQS queues in AWS CloudFormation.
+  - Use folder /Iaac in this repository (Infraestructure as a Code) to publish the MySQL, DynamoDB and Redis databases, and also SQS queues in AWS CloudFormation.
   - In DynamoDB create two table: customer and pre-customer.
   - Create these parameters in AWS SSM Parameter Store:MYSQL_DATABASE, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_USER, REDIS_HOST, TOKEN_KEY.
   - In Lambda functions there is the SAM Template for creating (CloudFormation) the backend applications as well. (Change URL SQS references)

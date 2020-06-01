@@ -1,0 +1,53 @@
+{
+	"AWSTemplateFormatVersion" : "2010-09-09",
+
+	"Description" : "Create DynamoDB tables",
+
+	"Resources" : {
+	
+		"CustomerTable" : {
+		  "Type" : "AWS::DynamoDB::Table",
+		  "Properties" : {
+			   "AttributeDefinitions" : [
+				  {
+					"AttributeName" : "email",
+					"AttributeType" : "S"   
+				  }
+				],
+			  "KeySchema" : [
+				  {
+					"AttributeName" : "email",
+					"KeyType" : "HASH"
+				  }
+				],
+			  "ProvisionedThroughput" : {
+				  "ReadCapacityUnits" : "5",
+				  "WriteCapacityUnits" : "5"
+				},
+			  "TableName" : "customer"
+			}
+		},
+		"PreCustomerTable" : {
+		  "Type" : "AWS::DynamoDB::Table",
+		  "Properties" : {
+			   "AttributeDefinitions" : [
+				  {
+					"AttributeName" : "UUID",
+					"AttributeType" : "S"   
+				  }
+				],
+			  "KeySchema" : [
+				  {
+					"AttributeName" : "UUID",
+					"KeyType" : "HASH"
+				  }
+				],
+			  "ProvisionedThroughput" : {
+				  "ReadCapacityUnits" : "5",
+				  "WriteCapacityUnits" : "5"
+				},
+			  "TableName" : "pre-customer"
+			}
+		}
+	}	
+}
