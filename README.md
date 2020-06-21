@@ -76,8 +76,7 @@ The project is for lab and studies, it is not operating so as not to keep costs 
 
 To setup the environment:
   - Use folder /Iaac in this repository (Infraestructure as a Code) to publish the MySQL, DynamoDB and Redis databases, and also SQS queues in AWS CloudFormation.
-  - In DynamoDB create two table: customer and pre-customer.
-  - Create these parameters in AWS SSM Parameter Store:MYSQL_DATABASE, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_USER, REDIS_HOST, TOKEN_KEY.
   - In Lambda functions there is the SAM Template for creating (CloudFormation) the backend applications as well. (Change URL SQS references)
+  - Create these parameters in AWS SSM Parameter Store: MYSQL_DATABASE, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_USER, REDIS_HOST, TOKEN_KEY.
   - Frontent: Create the buckets and AWS CloudFormation for static delivery.
   - Create other CloudFront to serve backend endpoints, pointing to API-GATEWAY
