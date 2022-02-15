@@ -1,0 +1,54 @@
+[submodule "queue-manager-backoffice"]
+	path = queue-manager-backoffice
+	url = https://github.com/markoshlima/queue-manager-backoffice
+[submodule "queue-manager-client"]
+	path = queue-manager-client
+	url = https://github.com/markoshlima/queue-manager-client
+[submodule "queue-manager-create-pre-customer"]
+	path = queue-manager-create-pre-customer
+	url = https://github.com/markoshlima/queue-manager-create-pre-customer
+[submodule "queue-manager-create-queue"]
+	path = queue-manager-create-queue
+	url = https://github.com/markoshlima/queue-manager-create-queue
+[submodule "queue-manager-create-queue-client"]
+	path = queue-manager-create-queue-client
+	url = https://github.com/markoshlima/queue-manager-create-queue-client
+[submodule "queue-manager-email-sender"]
+	path = queue-manager-email-sender
+	url = https://github.com/markoshlima/queue-manager-email-sender
+[submodule "queue-manager-get-client-position"]
+	path = queue-manager-get-client-position
+	url = https://github.com/markoshlima/queue-manager-get-client-position
+[submodule "queue-manager-get-queue-client"]
+	path = queue-manager-get-queue-client
+	url = https://github.com/markoshlima/queue-manager-get-queue-client
+[submodule "queue-manager-get-queue-clients"]
+	path = queue-manager-get-queue-clients
+	url = https://github.com/markoshlima/queue-manager-get-queue-clients
+[submodule "queue-manager-get-queue-customer"]
+	path = queue-manager-get-queue-customer
+	url = https://github.com/markoshlima/queue-manager-get-queue-customer
+[submodule "queue-manager-get-user"]
+	path = queue-manager-get-user
+	url = https://github.com/markoshlima/queue-manager-get-user
+[submodule "queue-manager-lambda_auth"]
+	path = queue-manager-lambda_auth
+	url = https://github.com/markoshlima/queue-manager-lambda_auth
+[submodule "queue-manager-layer-redis"]
+	path = queue-manager-layer-redis
+	url = https://github.com/markoshlima/queue-manager-layer-redis
+[submodule "queue-manager-layer-utils"]
+	path = queue-manager-layer-utils
+	url = https://github.com/markoshlima/queue-manager-layer-utils
+[submodule "queue-manager-login"]
+	path = queue-manager-login
+	url = https://github.com/markoshlima/queue-manager-login
+[submodule "queue-manager-pre-customer-to-customer"]
+	path = queue-manager-pre-customer-to-customer
+	url = https://github.com/markoshlima/queue-manager-pre-customer-to-customer
+[submodule "queue-manager-remove-client-queue"]
+	path = queue-manager-remove-client-queue
+	url = https://github.com/markoshlima/queue-manager-remove-client-queue
+[submodule "queue-manager-validate-pre-customer"]
+	path = queue-manager-validate-pre-customer
+	url = https://github.com/markoshlima/queue-manager-validate-pre-customer
