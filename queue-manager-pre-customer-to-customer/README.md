@@ -1,1 +1,0 @@
-# queue-manager-pre-customer-to-customer

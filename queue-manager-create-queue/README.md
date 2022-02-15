@@ -1,1 +1,0 @@
-# queue-manager-create-queue
